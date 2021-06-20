@@ -1,1 +1,36 @@
 ************Welcome to Address Book System************
+
+UC1:Ability to create a Address Book Service DB.
+Solution:
+	//Create a database using 'CREATE'command like:address_book_system.
+	mysql> CREATE DATABASE address_book_system;
+	Query OK, 1 row affected (0.17 sec)
+	
+	//View a all databases.
+	mysql> SHOW databases;
+	+---------------------+
+	| Database            |
+	+---------------------+
+	| address_book_system |
+	| information_schema  |
+	| mysql               |
+	| payroll_service     |
+	| performance_schema  |
+	| sakila              |
+	| sys                 |
+	| world               |
+	+---------------------+
+	8 rows in set (0.00 sec)
+
+	//Use particular database using 'USE' command. 
+	mysql> USE address_book_system;
+	Database changed
+
+	//View database.
+	mysql> SELECT DATABASE();
+	+---------------------+
+	| DATABASE()          |
+	+---------------------+
+	| address_book_system |
+	+---------------------+
+	1 row in set (0.00 sec)
