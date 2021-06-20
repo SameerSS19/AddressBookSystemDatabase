@@ -167,4 +167,34 @@ Solution:
 	3 rows in set (0.03 sec)
 
 
+UC8:Ability to retrieve entries sorted alphabetically by Person’s name for a given city.
+Solution:
+	//Insert some data are same in a particular field like:City-Ghaziabad.
+	mysql> INSERT INTO address_book(first_name, last_name, address, city , state , zip , phone_number, email) VALUES
+   	 -> ('Anas','Khan','Raj nagar','Ghaziabad','Uttar Pradesh',201009,99877473,'anas12@gmail.com');
+	Query OK, 1 row affected (0.10 sec)
+	
+	//View data table.
+	mysql> SELECT * FROM address_book;
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+------------------------+
+	| id | first_name | last_name | address       | city      | state         | zip    | phone_number | email                  |
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+------------------------+
+	|  5 | Sameer     | Kassar    | Kailla Bhatta | Ghaziabad | Uttar Pradesh | 201001 |    997185839 | sk3090019@gmail.com    |
+	|  6 | Shakiv     | Saifi     | Milak         | Rampur    | UP            |  44401 |     97162777 | shakivali123@gmail.com |
+	|  7 | Kadir      | Safi      | Pakbada       | Delhi     | Delhi         |  22392 |      9837344 | kadir123@gmail.com     |
+	|  9 | Anas       | Khan      | Raj nagar     | Ghaziabad | Uttar Pradesh | 201009 |     99877473 | anas12@gmail.com       |
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+------------------------+
+	4 rows in set (0.00 sec)
+
+	//Sorted entries by assending order using 'ASC' command.
+	mysql> SELECT * FROM address_book WHERE city='Ghaziabad' ORDER BY first_name ASC;
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+---------------------+
+	| id | first_name | last_name | address       | city      | state         | zip    | phone_number | email               |
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+---------------------+
+	|  9 | Anas       | Khan      | Raj nagar     | Ghaziabad | Uttar Pradesh | 201009 |     99877473 | anas12@gmail.com    |
+	|  5 | Sameer     | Kassar    | Kailla Bhatta | Ghaziabad | Uttar Pradesh | 201001 |    997185839 | sk3090019@gmail.com |
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+---------------------+
+	2 rows in set (0.00 sec)
+
+
 
