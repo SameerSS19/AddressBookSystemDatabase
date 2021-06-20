@@ -197,4 +197,53 @@ Solution:
 	2 rows in set (0.00 sec)
 
 
+UC9:Ability to identify each Address Book with name and Type.
+Solution:
+	//Add one field in a table like:type.
+	mysql> ALTER table address_book add type varchar(50);
+	Query OK, 0 rows affected (0.84 sec)
+	Records: 0  Duplicates: 0  Warnings: 0
+	
+	//View Table in a display.
+	mysql> SELECT * FROM address_book;
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+------------------------+------+
+	| id | first_name | last_name | address       | city      | state         | zip    | phone_number | email                  | type |
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+------------------------+------+
+	|  5 | Sameer     | Kassar    | Kailla Bhatta | Ghaziabad | Uttar Pradesh | 201001 |    997185839 | sk3090019@gmail.com    | NULL |
+	|  6 | Shakiv     | Saifi     | Milak         | Rampur    | UP            |  44401 |     97162777 | shakivali123@gmail.com | NULL |
+	|  7 | Kadir      | Safi      | Pakbada       | Delhi     | Delhi         |  22392 |      9837344 | kadir123@gmail.com     | NULL |
+	|  9 | Anas       | Khan      | Raj nagar     | Ghaziabad | Uttar Pradesh | 201009 |     99877473 | anas12@gmail.com       | NULL |
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+------------------------+------+
+	4 rows in set (0.03 sec)
+	
+	//Add a type like family.
+	mysql> UPDATE address_book SET type="family" WHERE first_name="Sameer";
+	Query OK, 1 row affected (0.13 sec)
+	Rows matched: 1  Changed: 1  Warnings: 0
+	
+	//Add a type like:friend.
+	mysql> UPDATE address_book SET type="friend" WHERE first_name="Shakiv";
+	Query OK, 1 row affected (0.08 sec)
+	Rows matched: 1  Changed: 1  Warnings: 0
 
+	//Add a type like:family
+	mysql> UPDATE address_book SET type="family" WHERE first_name="Kadir";
+	Query OK, 1 row affected (0.10 sec)
+	Rows matched: 1  Changed: 1  Warnings: 0
+	
+	//Add a type like:profession
+	mysql> UPDATE address_book SET type="Profession" WHERE first_name="Anas";
+	Query OK, 1 row affected (0.11 sec)
+	Rows matched: 1  Changed: 1  Warnings: 0
+
+	//View a data table.
+	mysql> SELECT * FROM address_book;
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+------------------------+------------+
+	| id | first_name | last_name | address       | city      | state         | zip    | phone_number | email                  | type       |
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+------------------------+------------+
+	|  5 | Sameer     | Kassar    | Kailla Bhatta | Ghaziabad | Uttar Pradesh | 201001 |    997185839 | sk3090019@gmail.com    | family     |
+	|  6 | Shakiv     | Saifi     | Milak         | Rampur    | UP            |  44401 |     97162777 | shakivali123@gmail.com | friend     |
+	|  7 | Kadir      | Safi      | Pakbada       | Delhi     | Delhi         |  22392 |      9837344 | kadir123@gmail.com     | family     |
+	|  9 | Anas       | Khan      | Raj nagar     | Ghaziabad | Uttar Pradesh | 201009 |     99877473 | anas12@gmail.com       | Profession |
+	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+------------------------+------------+
+	4 rows in set (0.00 sec)
