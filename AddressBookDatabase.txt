@@ -94,3 +94,22 @@ Solution:
 	+----+------------+-----------+----------------+--------------+---------------+--------+--------------+------------------------+
 	4 rows in set (0.00 sec)
 	
+
+UC4: Ability to edit existing contact person using their name.
+Solution:
+	//Edit exixting contact using there name using 'UPDATE'comand.
+	mysql> UPDATE address_book set city = 'Delhi' WHERE first_name = 'Kadir';
+	Query OK, 1 row affected (0.08 sec)
+	Rows matched: 1  Changed: 1  Warnings: 0
+
+	//View a data table.
+	mysql> SELECT * FROM address_book;
+	+----+------------+-----------+----------------+--------------+---------------+--------+--------------+------------------------+
+	| id | first_name | last_name | address        | city         | state         | zip    | phone_number | email                  |
+	+----+------------+-----------+----------------+--------------+---------------+--------+--------------+------------------------+
+	|  5 | Sameer     | Kassar    | Kailla Bhatta  | Ghaziabad    | Uttar Pradesh | 201001 |    997185839 | sk3090019@gmail.com    |
+	|  6 | Shakiv     | Saifi     | Milak          | Rampur       | UP            |  44401 |     97162777 | shakivali123@gmail.com |
+	|  7 | Kadir      | Safi      | Pakbada        | Delhi        | Delhi         |  22392 |      9837344 | kadir123@gmail.com     |
+	|  8 | Uwesh      | Saifi     | Bago Wali gali | Muzafarnagar | Delhi         |  66335 |     87647275 | uwesh123@gmail.com     |
+	+----+------------+-----------+----------------+--------------+---------------+--------+--------------+------------------------+
+	4 rows in set (0.03 sec)
