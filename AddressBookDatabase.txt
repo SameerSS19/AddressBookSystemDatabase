@@ -71,3 +71,26 @@ Solution:
 	9 rows in set (0.03 sec)
 
 
+UC3:Ability to insert new Contacts to Address Book.
+Solution:
+	//Insert a data into table using 'INSERT' command.
+	mysql> INSERT INTO address_book(first_name, last_name, address, city , state , zip , phone_number, email) VALUES
+    	-> ('Sameer','Kassar','Kailla Bhatta','Ghaziabad','Uttar Pradesh',201001,997185839,'sk3090019@gmail.com'),
+    	-> ('Shakiv','Saifi','Milak','Rampur','UP',44401,97162777,'shakivali123@gmail.com'),
+    	-> ('Kadir','Safi','Pakbada','Muradabad','Delhi',22392,9837344,'kadir123@gmail.com'),
+    	-> ('Uwesh','Saifi','Bago Wali gali','Muzafarnagar','Delhi',66335,87647275,'uwesh123@gmail.com');
+	Query OK, 4 rows affected (0.15 sec)
+	Records: 4  Duplicates: 0  Warnings: 0
+
+	//View a table in a table.
+	mysql> SELECT * FROM address_book;
+	+----+------------+-----------+----------------+--------------+---------------+--------+--------------+------------------------+
+	| id | first_name | last_name | address        | city         | state         | zip    | phone_number | email                  |
+	+----+------------+-----------+----------------+--------------+---------------+--------+--------------+------------------------+
+	|  5 | Sameer     | Kassar    | Kailla Bhatta  | Ghaziabad    | Uttar Pradesh | 201001 |    997185839 | sk3090019@gmail.com    |
+	|  6 | Shakiv     | Saifi     | Milak          | Rampur       | UP            |  44401 |     97162777 | shakivali123@gmail.com |
+	|  7 | Kadir      | Safi      | Pakbada        | Muradabad    | Delhi         |  22392 |      9837344 | kadir123@gmail.com     |
+	|  8 | Uwesh      | Saifi     | Bago Wali gali | Muzafarnagar | Delhi         |  66335 |     87647275 | uwesh123@gmail.com     |
+	+----+------------+-----------+----------------+--------------+---------------+--------+--------------+------------------------+
+	4 rows in set (0.00 sec)
+	
