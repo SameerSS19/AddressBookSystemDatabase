@@ -142,6 +142,29 @@ Solution:
 	+----+------------+-----------+---------------+-----------+---------------+--------+--------------+---------------------+
 	1 row in set (0.00 sec)
 
+UC7:Ability to understand the size of address book by City and State -Here size indicates the count.
+Solution:
+	//Count the number of person in a particular city.
+	mysql> SELECT city, COUNT(first_name) FROM address_book GROUP BY city;
+	+-----------+-------------------+
+	| city      | COUNT(first_name) |
+	+-----------+-------------------+
+	| Ghaziabad |                 1 |
+	| Rampur    |                 1 |
+	| Delhi     |                 1 |
+	+-----------+-------------------+
+	3 rows in set (0.00 sec)
+	
+	//Count the number of person in a particular state.
+	mysql> SELECT state, COUNT(first_name) FROM address_book GROUP BY state;
+	+---------------+-------------------+
+	| state         | COUNT(first_name) |
+	+---------------+-------------------+
+	| Uttar Pradesh |                 1 |
+	| UP            |                 1 |
+	| Delhi         |                 1 |
+	+---------------+-------------------+
+	3 rows in set (0.03 sec)
 
 
 
